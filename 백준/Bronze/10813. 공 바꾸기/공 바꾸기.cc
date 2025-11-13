@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
@@ -19,29 +20,31 @@ typedef vector<vpll> vvpll;
 int main(void)
 {
     ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+    cin.tie(NULL);
+    cout.tie(NULL);
 
-    ll n, m, tmp;
-    ll a, b;
+    ll n, m, a, b;
     cin >> n >> m;
-    vll arr(n + 1);
+
+    vll bucket(n + 1);
+
     FOR(i, 1, n + 1)
     {
-        arr[i] = i;
+        bucket[i] = i;
     }
+
     FOR(i, 0, m)
     {
         cin >> a >> b;
-        tmp = arr[a];
-        arr[a] = arr[b];
-        arr[b] = tmp;
+        swap(bucket[a], bucket[b]);
     }
 
     FOR(i, 1, n + 1)
     {
-        cout << arr[i];
+        cout << bucket[i];
         if (i < n)
             cout << ' ';
     }
+
     return 0;
 }
