@@ -1,15 +1,7 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-)
+import "fmt"
 
 func main() {
-	//reader := bufio.NewReader(os.Stdin)
-	writer := bufio.NewWriter(os.Stdout)
-	defer writer.Flush()
-    fmt.Fprintln(writer, "Hello World!")
-	
+    fmt.Println("Hello World!")
 }
